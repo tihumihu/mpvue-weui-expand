@@ -20,7 +20,7 @@ import 'mpvue-weui-expand/src/style/weui.css';
   <mv-button type="primary" size="large" btnClass="mb15">默认按钮</mv-button>
 </template>
 <script>
-  import mvButton from 'mpvue-weui/src/button';
+  import mvButton from 'mpvue-weui-expand/src/button';
   export default {
     components: {
       mvButton,
