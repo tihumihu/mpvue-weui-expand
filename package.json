@@ -1,5 +1,5 @@
 {
-  "name": "mpvue-weui",
+  "name": "mpvue-weui-expand",
   "version": "1.0.0",
   "description": "mpvue-weui, 基于 mpvue 的 weui 框架,参考了mpvue-weui-dev,但因为业务不同，不能在其基础上拓展，所以自己写了个ui库",
   "main": "src/",

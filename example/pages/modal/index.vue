@@ -1,29 +1,40 @@
 <template>
-  <page-content title="Modal" desc="对话框，采用小程序原生的 modal 。">
-    <mp-modal ref="mpModal" :title="title" :content="content" @confirm="confirm" @cancel="cancel" @complete="complete" @fail="fail"></mp-modal>
-    <mpButton size="large" @click="showModal">显示 modal</mpButton>
-  </page-content>
+  <div class="weui-cells">
+    <div class="weui-cell">
+      <a @click="showModal" class="weui-btn weui-btn_default">+ 添加章节</a>
+    </div>
+    <div class="weui-cell" >
+      <div class="weui-cell__bd weui-dialog">
+        <v-modal :title="添加章节" :modelShow="modalShow" >
+          <div slot="content">
+            content
+          </div>
+          <div class="weui-dialog__ft" slot="ft">
+            <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_default">辅助操作</a>
+            <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_primary">主操作</a>
+          </div>
+        </v-modal>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
-import mpModal from '../../../src/modal';
-import pageContent from '../../components/page-content';
-import mpButton from '../../../src/button';
+import vModal from '../../../src/modal';
 export default {
   data() {
     return {
       title: '标题',
-      content: '内容'
+      content: '内容',
+      modalShow:false
     };
   },
   components: {
-    pageContent,
-    mpModal,
-    mpButton
+    vModal
   },
   methods: {
     showModal() {
-      this.$refs.mpModal.show();
+      this.modalShow =true;
     },
     confirm(res) {
       console.log(res);
